@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register_Inventario</title>
+    <link rel="stylesheet" href="resources/css/style.css">
+</head>
+
+<body>
+    <div class="register-form">
+        <div class="link-login"><a href="login">Login</a></div>
+        <h1>Registro de usuario</h1>
+        <form action="/register" method="POST">
+            <div class="div-label"><label for="user">Nombre de usuario</label></div>
+            <input type="text" name="user" required ngModel>
+
+            <div class="div-label"><label for="name">Nombre completo</label></div>
+            <input type="text" name="name" required ngModel>
+
+            <div class="div-label"><label for="rol">Rol de usuario</label></div>
+            <select name="rol" id="rol" class="select-css">
+                <option value="Admin">Admin</option>
+                <option value="Data entry">Data entry</option>
+            </select>
+            
+            <div class="div-label"><label for="pass">Password</label></div>
+            <input type="password" name="pass" required>
+
+            <div style="display: inline;">
+                <input type="submit" class="btn-save" value="Guardar"><a href="/" class="btn-cancel">Cancelar</a>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+<% if(typeof alert != "undefined") { %>
+    <script>
+        Swal.fire({
+            title: '<%= alertTitle %>',
+            text: '<%= alertMessage %>',
+            icon: '<%= alertIcon %>',
+            showConfirmButton: '<%= showConfirmButton %>',
+            timer: '<%= timer %>'
+
+    }).then(()=>{
+        window.location = '/login'
+    })
+    </script>
+    <% } %>
+    
+</body>
+
+
+
+
+</html>
